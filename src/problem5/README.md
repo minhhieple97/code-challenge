@@ -12,6 +12,10 @@ A RESTful API built with Express.js, TypeScript, and SQLite for managing product
 - TypeScript for type safety
 - Express.js for routing and middleware
 
+## Testing
+
+You can use the `Product management.postman_collection` file to import into Postman for testing the API endpoints. This collection includes all the necessary requests to interact with the API.
+
 ## Prerequisites
 
 - Node.js (v18 or higher)
@@ -22,6 +26,7 @@ A RESTful API built with Express.js, TypeScript, and SQLite for managing product
 
 1. Clone the repository
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -35,6 +40,7 @@ The application uses SQLite as its database. The database file (`database.sqlite
 ## Development
 
 Start the development server with hot reload:
+
 ```bash
 npm run dev
 # or
@@ -44,6 +50,7 @@ yarn dev
 ## Production
 
 Build and start for production:
+
 ```bash
 npm run build
 npm start
@@ -55,9 +62,11 @@ yarn start
 ## API Endpoints
 
 ### Create Product
+
 - **POST** `/api/products`
 - Creates a new product
 - Request Body:
+
 ```json
 {
   "name": "Product Name",
@@ -67,6 +76,7 @@ yarn start
 ```
 
 ### List Products
+
 - **GET** `/api/products`
 - Returns all products with optional filtering
 - Query Parameters:
@@ -76,17 +86,20 @@ yarn start
 - Example: `/api/products?search=phone&minPrice=100&maxPrice=1000`
 
 ### Get Product Details
+
 - **GET** `/api/products/:id`
 - Returns details of a specific product
 - URL Parameters:
   - `id`: Product ID
 
 ### Update Product
+
 - **PUT** `/api/products/:id`
 - Updates an existing product
 - URL Parameters:
   - `id`: Product ID
 - Request Body (all fields optional):
+
 ```json
 {
   "name": "Updated Name",
@@ -96,6 +109,7 @@ yarn start
 ```
 
 ### Delete Product
+
 - **DELETE** `/api/products/:id`
 - Deletes a product
 - URL Parameters:
@@ -116,6 +130,7 @@ yarn start
 ## Error Handling
 
 The API returns appropriate HTTP status codes:
+
 - `200`: Success
 - `201`: Resource created
 - `204`: Resource deleted
@@ -124,6 +139,7 @@ The API returns appropriate HTTP status codes:
 - `500`: Server error
 
 Error responses include descriptive messages:
+
 ```json
 {
   "error": "Error message"
